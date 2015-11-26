@@ -57,7 +57,11 @@ export default React.createClass({
         }
         <button type="button" onClick={this.clear}>Clear</button>
         <input type="text" style="width: 340px; font-size: 18px"></input>
-        <HandwritingInput applicationKey="xxxxx-xxxxx" hmacKey="xxxxx-xxxxx" onChange={this.inputChanged} onError={this.displayError} onInit={(controls) => this.controls = controls} />
+        <HandwritingInput
+          applicationKey="xxxxx-xxxxx" hmacKey="xxxxx-xxxxx"
+          protocol="WebSocket"
+          onChange={this.inputChanged} onError={this.displayError}
+          onInit={(controls) => this.controls = controls} />
       </div>
     );
   },
@@ -97,6 +101,7 @@ export default React.createClass({
           node: document.getElementById('app'), // where to render the handwriting recognition input
           applicationKey: 'xxxxx-xxxxx',
           hmacKey: 'xxxxx-xxxxx',
+          protocol: 'WebSocket',
           onChange: function(data, label) {
             input.value = label;
           },
