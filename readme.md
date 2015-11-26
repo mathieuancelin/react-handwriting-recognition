@@ -30,6 +30,7 @@ See the documentation of the MyScript javascript library for more details [here]
 
 ```javascript
 import React from 'react';
+import { HandwritingInput } from 'react-handwriting-recognition';
 
 export default React.createClass({
   getInitialState() {
