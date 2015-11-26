@@ -122,4 +122,4 @@ export default React.createClass({
 
 ## ext-libs folder ?
 
-MyScript javascript library and Google CryptoJS are not using commonJS conventions and exposes/requires dependencies from the global namespace. So I had to hack them a little bit to make everything works. `MyScript`, `Q`, `CryptoJS` and `HANDJS` are still visible in the global namespace.
+MyScript javascript library and Google CryptoJS are not using commonJS conventions and exposes/requires dependencies from the global namespace. So I had to hack them a little bit to make everything works together (and include everything into the bundle file with `require` imports). `MyScript`, `Q`, `CryptoJS` and `HANDJS` are still visible in the global namespace.
