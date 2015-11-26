@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Handwriting Recognition</title>
+    <link rel="stylesheet" href="./index.css"/>
+  </head>
+  <body>
+    <div style="margin-bottom: 10px">
+      <button id="delete" type="button">Delete</button>
+      <input type="text" id="recognized" style="width: 340px; font-size: 18px"></input>
+    </div>
+    <div id="app"></div>
+    <script src="/assets/react-handwriting-recognition.js"></script>
+    <script>
+      var input = document.getElementById('recognized');
+      var deleteButton = document.getElementById('delete');
+      HandwritingRecognition.input({
+        node: document.getElementById('app'),
+        applicationKey: '22eda92c-10af-40d8-abea-fd4093c17d81',
+        hmacKey: 'a1fa759f-b3ce-4091-9fd4-d34bb870c601',
+        host: 'webdemo.myscript.com',
+        onChange: function(data, label) {
+          input.value = label;
+        },
+        onInit: function(controls) {
+          deleteButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            controls.delete();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
