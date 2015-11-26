@@ -24,7 +24,7 @@ export default React.createClass({
     applicationKey: React.PropTypes.string.isRequired,
     hmacKey: React.PropTypes.string.isRequired,
     onError: React.PropTypes.func,
-    onSuccess: React.PropTypes.func,
+    onChange: React.PropTypes.func,
     onInit: React.PropTypes.func,
     onShutdown: React.PropTypes.func,
   },
@@ -60,10 +60,10 @@ export default React.createClass({
         this.props.onError(err);
       }
     });
-    this.props.onInit({ inkPaper: this.inkPaper, delete: this.delete, undo: this.undo, redo: this.redo });
+    this.props.onInit({ inkPaper: this.inkPaper, clear: this.delete, undo: this.undo, redo: this.redo });
   },
   componentWillUnmount() {
-    this.props.onShutdown();
+    this.props.onShutdown({ inkPaper: this.inkPaper, clear: this.delete, undo: this.undo, redo: this.redo });
   },
   delete() {
     this.inkPaper.clear();
