@@ -4,6 +4,8 @@
 
 You can you it inside from a React component, or just use the pure Javascript API.
 
+![usage](https://raw.githubusercontent.com/mathieuancelin/react-handwriting-recognition/master/myscript.gif)
+
 ## Options
 
 Passed as `props` of the React component or to the Javascript API
