@@ -1,14 +1,19 @@
 import React from 'react';
-import Q from 'q';
+import MyScript from './ext/myscript.min';
 
+// import Q from 'q';
 // Expose things
-window.Q = Q;
-require('handjs');
-require('../ext-libs/core-min');
-require('../ext-libs/x64-core-min');
-require('../ext-libs/sha512-min');
-require('../ext-libs/hmac-min');
-require('../ext-libs/myscript.min');
+// window.Q = Q;
+// require('handjs');
+// require('../ext-libs/core-min');
+// require('../ext-libs/x64-core-min');
+// require('../ext-libs/sha512-min');
+// require('../ext-libs/hmac-min');
+// require('../ext-libs/myscript.min');
+
+
+// TODO : tweak css
+// TODO : on resize
 
 export default React.createClass({
   propTypes: {
